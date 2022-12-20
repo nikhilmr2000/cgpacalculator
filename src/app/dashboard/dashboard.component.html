@@ -1,0 +1,45 @@
+
+<app-navbar></app-navbar>
+
+<div class="px-4 py-5 my-5 text-center">
+    <img class="d-block mx-auto mb-4" src="/assets/images1.png" alt="" width="72" height="65">
+    <h1 class="display-5 fw-bold">Hello {{register.name}}</h1>
+    <div class="col-lg-6 mx-auto">
+        <br/>
+      <p class="lead mb-4">Email : {{register.email}}</p>
+      <p class="lead mb-4">Registration Number : {{register.registernumber}}</p>
+      <p class="lead mb-4">Contact : {{register.contact}}</p>
+
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        <button type="button" class="btn btn-primary btn-lg px-4 gap-3" (click)="calculateGPA()">Calculate GPA</button>
+        <button type="button" class="btn btn-outline-secondary btn-lg px-4" (click)="calculateCGPA()">Calculate CGPA</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container px-4 py-5" id="featured-3">
+    <h2 class="pb-2 border-bottom">Saved GPA</h2>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3" >
+      <div class="feature col" *ngFor="let sem of semesterGPA">
+        <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+          <svg class="bi" width="1em" height="1em"><use xlink:href="#collection"></use></svg>
+        </div>
+        <h3 class="fs-2">Semester : {{sem.semester}}</h3>
+        <p style="font-size:22px;">GPA : {{sem.gpa}}</p>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <footer class="py-3 my-4">
+      <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+        <li class="nav-item"><a href="/" class="nav-link px-2 text-muted">Home</a></li>
+        <li class="nav-item"><a href="/calculateGPA" class="nav-link px-2 text-muted">Calculate GPA</a></li>
+        <li class="nav-item"><a href="/calculateCGPA" class="nav-link px-2 text-muted">Calculate CGPA</a></li>
+        <li class="nav-item"><a href="/percentageConverter" class="nav-link px-2 text-muted">Convert CGPA to Percentage</a></li>
+        <li class="nav-item"><a href="/" class="nav-link px-2 text-muted">About</a></li>
+      </ul>
+      <p class="text-center text-muted">© Nikhil M R 2022 Company, Inc</p>
+    </footer>
+  </div>
